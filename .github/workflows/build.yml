@@ -41,9 +41,6 @@ jobs:
         run: west build -s zmk/app -b seeeduino_xiao_rp2040 -d build/brk_out_xiao_rp2040 -- -DZMK_CONFIG="${GITHUB_WORKSPACE}/config" -DSHIELD=brk_out
       - name: West Build (BRK_OUT Xiao BLE)
         run: west build -s zmk/app -b seeeduino_xiao_ble -d build/brk_out_xiao_ble -- -DZMK_CONFIG="${GITHUB_WORKSPACE}/config" -DSHIELD=brk_out
-      - name: BRK_OUT .config
-        if: ${{ always() }}
-        run: cat -n build/brk_out_xiao_ble/zephyr/.config
       - name: Rename zmk.uf2
         run: |
           cp build/brk_out_xiao_rp2040/zephyr/zmk.uf2 brk_out_xiao_rp2040.uf2
