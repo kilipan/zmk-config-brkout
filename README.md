@@ -1,6 +1,6 @@
 # BRK OUT ZMK firmware
 
-[Here](https://github.com/weteor/BRK_OUT) you can find the hardware files.
+[Here](https://github.com/weteor/BrkOut) you can find the hardware files.
 
 ## HOW TO USE
 

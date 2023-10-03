@@ -62,7 +62,7 @@
 	    status = "okay";
 	    gpio-controller;
 	    reg = <0x20>;
-	    label = "PCA9555";
+	    //label = "PCA9555";
 	    #gpio-cells = <2>;
 	    ngpios = <8>;
 	};
