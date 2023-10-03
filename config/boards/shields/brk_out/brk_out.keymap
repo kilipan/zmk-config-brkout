@@ -149,8 +149,7 @@
                 &kp Q       &kp W       &kp E       &kp R       &kp T     &kp Y       &kp U       &kp I       &kp O       &kp P
                 &hm LSHFT A &hm LGUI S  &hm LALT D  &hm LCTRL F &kp G     &kp H       &hm RCTRL J &hm RALT K  &hm RGUI L  &hm RSHFT QUOT
                 &kp Z       &kp X       &kp C       &kp V       &kp B     &kp N       &kp M       &kp COMMA   &kp DOT     &kp SEMI
-//                &none       &none           &lt NUM_L SPACE       &mo NAV_L           &lt SYM_L RET         &none       &none
-                &none       &none                &mo NAV_L   &lt NUM_L SPACE   &kp RET     &mo SYM_L              &none       &none 
+                &none       &none                &mo NAV_L   &lt NUM_L SPACE   &kp RET     &mo SYM_L              &none       &bootloader
             >;
         };
         
