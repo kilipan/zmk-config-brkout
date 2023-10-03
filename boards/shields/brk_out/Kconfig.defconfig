@@ -52,4 +52,4 @@ config GPIO_PCA95XX
 #
 #endif # LVGL
 
-endif # SHIELD_SPC_EVDR
+endif # SHIELD_BRK_OUT
