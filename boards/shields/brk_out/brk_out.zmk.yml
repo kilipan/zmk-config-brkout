@@ -1,0 +1,8 @@
+file_format: "1"
+id: brk_out
+name: BRK_OUT
+type: shield
+url: https://github.com/weteor/BRK_OUT
+requires: [seeed_xiao]
+features:
+  - keys

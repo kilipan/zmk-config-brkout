@@ -1,0 +1,56 @@
+on: [push, pull_request, workflow_dispatch]
+
+name: Build
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    container:
+      image: zmkfirmware/zmk-build-arm:stable
+    name: Build
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          path: config/
+      - name: Cache west modules
+        uses: actions/cache@v3
+        env:
+          cache-name: cache-zephyr-modules
+        with:
+          path: |
+            modules/
+            tools/
+            zephyr/
+            bootloader/
+            zmk/
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('manifest-dir/west.yml') }}
+          restore-keys: |
+            ${{ runner.os }}-build-${{ env.cache-name }}-
+            ${{ runner.os }}-build-
+            ${{ runner.os }}-
+      - name: West Init
+        run: west init -l config
+      - name: West Update
+        run: west update
+      - name: West Zephyr export
+        run: west zephyr-export
+      - name: list modules
+        run: west list
+      - name: West Build (BRK_OUT Xiao RP2040)
+        run: west build -s zmk/app -b seeeduino_xiao_rp2040 -d build/brk_out_xiao_rp2040 -- -DZMK_CONFIG="${GITHUB_WORKSPACE}/config" -DSHIELD=brk_out
+      - name: West Build (BRK_OUT Xiao BLE)
+        run: west build -s zmk/app -b seeeduino_xiao_ble -d build/brk_out_xiao_ble -- -DZMK_CONFIG="${GITHUB_WORKSPACE}/config" -DSHIELD=brk_out
+      - name: BRK_OUT .config
+        if: ${{ always() }}
+        run: cat -n build/brk_out_xiao_ble/zephyr/.config
+      - name: Rename zmk.uf2
+        run: |
+          cp build/brk_out_xiao_rp2040/zephyr/zmk.uf2 brk_out_xiao_rp2040.uf2
+          cp build/brk_out_xiao_ble/zephyr/zmk.uf2 brk_out_xiao_ble.uf2
+      - name: Archive
+        uses: actions/upload-artifact@v3
+        with:
+          name: BRK_OUT_firmware
+          path: '*.uf2'
+      
