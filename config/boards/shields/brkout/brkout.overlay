@@ -54,6 +54,6 @@
         gpio-controller;
         reg = <0x20>;
         #gpio-cells = <2>;
-        ngpios = <11>;
+        ngpios = <16>;
     };
 };
