@@ -1,8 +1,8 @@
 file_format: "1"
-id: brk_out
-name: BRK_OUT
+id: brkout
+name: BrkOut
 type: shield
-url: https://github.com/weteor/BRK_OUT
+url: https://github.com/weteor/BrkOut
 requires:
   - seeeduino_xiao_rp2040
 features:

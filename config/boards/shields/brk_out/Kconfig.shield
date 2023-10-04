@@ -1,5 +1,0 @@
-# Copyright (c) 2022 @weteor
-# SPDX-License-Identifier: MIT
-
-config SHIELD_BRK_OUT
-   def_bool $(shields_list_contains,brk_out)

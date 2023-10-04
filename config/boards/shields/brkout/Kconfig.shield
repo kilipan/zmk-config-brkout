@@ -1,0 +1,5 @@
+# Copyright (c) 2022 @weteor
+# SPDX-License-Identifier: MIT
+
+config SHIELD_BRKOUT
+   def_bool $(shields_list_contains,brkout)

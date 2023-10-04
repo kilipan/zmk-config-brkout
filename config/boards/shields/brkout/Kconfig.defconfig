@@ -1,10 +1,10 @@
 # Copyright (c) 2022 @weteor
 # SPDX-License-Identifier: MIT
 
-if SHIELD_BRK_OUT
+if SHIELD_BRKOUT
 
 config ZMK_KEYBOARD_NAME
-    default "BRK OUT"
+    default "BrkOut"
 
 config I2C
     default y
@@ -12,4 +12,4 @@ config I2C
 config GPIO_PCA95XX
     default y
     
-endif # SHIELD_BRK_OUT
+endif # SHIELD_BRKOUT
