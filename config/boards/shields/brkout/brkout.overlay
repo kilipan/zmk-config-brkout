@@ -52,9 +52,9 @@
         compatible = "nxp,pca95xx";
         status = "okay";
         gpio-controller;
-        reg = <0x20>;
-	label = "PCA9555";
+        reg = <0x40>;
         #gpio-cells = <2>;
-        ngpios = <11>;
+        ngpios = <12>;
+	gpio-reserved-ranges = <0 1>, <11 1>;
     };
 };
