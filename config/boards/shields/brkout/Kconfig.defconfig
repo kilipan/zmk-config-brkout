@@ -12,7 +12,4 @@ config I2C
 config GPIO_PCA95XX
     default y
 
-config ZMK_KSCAN_MATRIX_SCAN
-    default y
-    
 endif # SHIELD_BRKOUT
