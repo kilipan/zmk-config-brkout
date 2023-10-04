@@ -24,22 +24,22 @@
         
         diode-direction = "col2row";
         col-gpios
-            = <&col_io 0 GPIO_ACTIVE_HIGH>
-            , <&col_io 1 GPIO_ACTIVE_HIGH>
+            = <&col_io 1 GPIO_ACTIVE_HIGH>
             , <&col_io 2 GPIO_ACTIVE_HIGH>
             , <&col_io 3 GPIO_ACTIVE_HIGH>
             , <&col_io 4 GPIO_ACTIVE_HIGH>
             , <&col_io 5 GPIO_ACTIVE_HIGH>
             , <&col_io 6 GPIO_ACTIVE_HIGH>
             , <&col_io 7 GPIO_ACTIVE_HIGH>
-            , <&xiao_d 6 GPIO_ACTIVE_HIGH>
-            , <&xiao_d 3 GPIO_ACTIVE_HIGH>
+            , <&col_io 8 GPIO_ACTIVE_HIGH>
+            , <&col_io 9 GPIO_ACTIVE_HIGH>
+            , <&col_io 10 GPIO_ACTIVE_HIGH>
             ;
         row-gpios
-            = <&xiao_d 7 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-            , <&xiao_d 8 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-            , <&xiao_d 9 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-            , <&xiao_d 10 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+            = <&xiao_d 0 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+            , <&xiao_d 1 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+            , <&xiao_d 2 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+            , <&xiao_d 3 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
             ;
     };
 };
@@ -53,7 +53,8 @@
         status = "okay";
         gpio-controller;
         reg = <0x20>;
+	label = "PCA9555";
         #gpio-cells = <2>;
-        ngpios = <8>;
+        ngpios = <11>;
     };
 };
